@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹에 파일전송</title>
+</head>
+<body>
+<!--  첨부파일 사용시 무조건 form 적용해야 함-->
+<form id="frm" method="post" action="./io_ok.do" enctype="multipart/form-data"></form>
+파일첨부 : <input type="file" name="mfile" accept="image/*"><br>
+<input type="button" value="업로드" onclick="fileok()">
+</body>
+<script >
+function fileok(){
+	/*파일정보가져옴*/
+	//var finfo =frm.mfile[0].files; 네임속성명
+	var finfo = document.getElementById("mfile").files;//아이디 속성명
+	
+	console.log(finfo[0].type);
+	console.log(finfo[0].size);
+	console.log(finfo[0].name);
+	console.log(finfo);
+	frm.submit();
+}
+</script>
+</html>

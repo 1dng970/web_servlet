@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>장바구니</title>
+</head>
+<style>
+
+.font1 {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    color: red;
+ } 
+  
+.total{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    padding-right: 5px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: right;
+    box-sizing: border-box;
+    }
+.pay-btn {
+     background-color: #175676; /* 버튼 색상 */
+     color: white; /* 글자 색상 */
+        border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px; /* 둥근 모서리 */
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .pay-btn:hover {
+            background-color: #133d52; /* 호버 효과 */
+    
+}
+</style>
+<!--
+장바구니 조회만 한다면 → GET
+장바구니에 상품 추가/삭제 기능이 필요하면 → POST 
+ -->
+<body>
+<p>장바구니</p>
+  구매확정 물픔<br><br>
+<form>
+<input type="checkbox" name="product1" > 프리즘 코리아<br><br>
+<input type="checkbox" name="subject2" > 삼성전자 QLED KQ85<br><br>
+<input type="checkbox" name="subject3" > LG전자 올레드 evo<br><br>
+<input type="checkbox" name="subject4"> 이스트라 스마트TV<br><br>
+<input type="checkbox" name="subject5" > LG전자 울트라 HD<br><br>
+<font class="font1"> 최종 결제 금액 : </font>
+    <div class="total">50000</div>price
+<input type="button" value="결제하기" class="pay-bth" onclick="step_pay()">  
+
+</form>
+</body>
+<script >
+
+
+
+
+</script>
+</html>
