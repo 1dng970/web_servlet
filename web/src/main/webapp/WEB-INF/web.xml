@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>web</display-name>
- 
- <servlet>
-<servlet-name>notice_view</servlet-name>
-<servlet-class>notice.notice_view</servlet-class>
+  
+  
+<servlet>
+<servlet-name>notice_delete</servlet-name>
+<servlet-class>notice.notice_delete</servlet-class>
 </servlet>
 
 <servlet-mapping>
-<servlet-name>notice_view</servlet-name>
-<url-pattern>/notice/notice_view.do</url-pattern>
-</servlet-mapping> 
+<servlet-name>notice_delete</servlet-name>
+<url-pattern>/notice/notice_delete.do</url-pattern>
+</servlet-mapping>   
+  
+<servlet>
+    <servlet-name>notice_view</servlet-name>
+    <servlet-class>notice.notice_view</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>notice_view</servlet-name>
+    <url-pattern>/notice/notice_view.do</url-pattern>
+</servlet-mapping>
   
 <servlet>
 <servlet-name>notice_list</servlet-name>
