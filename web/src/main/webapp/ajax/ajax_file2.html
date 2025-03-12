@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax - File 전송(Jquery)</title>
+<!--:ERR_ABORTED 404 (Not Found) 제이쿼리가 없어서 에러  -->
+<script src="../jquery/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btn").click(function(){
+		//console.log("test");
+		
+		if($("#mfile").val()==""){
+		alert("파일을 첨부파여 합니다.");
+	    }else{
+	    	/*jquert ajax I/O형태 두가지 방식 <form태그> 선헌 후 
+	    	new FormData() 를 이용하여 back-end 로 전달
+	    	2.form 태그 없는 방식일 경우 아이디로 [] 배열기호 + files[]배열 기호까지 적용 
+	    	*/
+	    	/*
+	    	var $fileup =$("#mfile")[0];
+	    	var $file =$fileup.files[0];
+	    	 var $fromdata = new FormData();
+	    	 $fromdata.append("mfile".$file);
+	    	 console.log($fromdata.get("mfile"));
+	    	*/
+	   
+	    var $fromdata = new FormData();
+	    	/*파일경로를 .을 찍었어야 되는데 ,찍어서 출력 결과가 나오지않았음  */
+	    $fromdata.append("mfile",$("#mfile")[0].files[0]);
+	    //console.log($fromdata.get("mfile"));
+	
+	    
+       $.ajax({
+			url: "./ajax_fileok.do",
+			cache:false,
+			type:"post",
+			dataType:"HTML",
+			data :$fromdata,//File 전송하는 data를 적용하는 방식
+			contentType : false,//multipart/form-data를 위해 false를 설정
+			processData :false,//데이터를 문자화 하지 않도록 설정
+			success:function(result){
+				if(result=="ok"){
+					alert("올바르게 파일이 전송 되었습니다.");
+				}				
+				//console.log(result);
+			},
+			error:function(error){
+				console.log(error);
+			}
+		 });		
+	   }	
+    });
+});
+
+
+</script>
+</head>
+<body>
+이미지 첨부파일 : <input type="file" id="mfile"><br>
+<input type="button" id="btn" value="전송">
+</body>
+</html>
