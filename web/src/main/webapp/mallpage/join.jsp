@@ -18,6 +18,7 @@
  <main>
 <!-- 베너 -->  
 <%@ include file="./join_view.jsp" %>   
+</main>
 <footer>
  <%@ include file="./footer.jsp" %>    
 </footer>

@@ -59,6 +59,7 @@ public class joinok extends HttpServlet {
 					+"</script>");
 			
 		}
+		this.pw.close();
 	}
 
 }
