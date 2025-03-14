@@ -1,23 +1,44 @@
-function writeok(){
-	
-if(frm.subject.value==""){//공지사항 제목 입력
-	alert("공지사항 제목을 입력하세요.");
-}
-else if(frm.writer.value==""){
-	alert("글쓴이를 입력하세요.");		
-}
-
-
-else{//공지사항 등록 조건
- 
- //txt 변수 생성(CKEDITOR.instances id이름.getData():ckditor를 로드 )
-var txt = CKEDITOR.instances.editor.getData();
-	
-	if(txt==""){//내용이 없을 경우 
-		alert("내용을 입력하셔야 합니다.");		
-	}else if(txt.length<40){
+function noticeok(){
 		
-	}
+if(frm.subject.value==""){
+	alert("공지사항 제목을 입력하세요");	
+	frm.subject.focus();
+	return false;
+	
+}else if(frm.writer.value==""){	
+	alert("글쓴이를 입력하세요");
+	  frm.writer.focus();	
+    return false;
+	  
+}
+
+/*
+else if(){//첨부파일 
+	
+	
+	
 	
 }
-}		
+*/
+
+
+else{//공지내용
+
+var txt = CKEDITOR.instances.editor.getData();
+
+if(txt==""){
+	alert("내용을 입력하세요");
+		return false;
+}
+else if(txt.lengt<40){//40자이상 등록되게 조건 
+	alert("최소  40자 이상 입력하셔야 합니다.");
+		return false;
+}	
+
+else{
+
+	frm.submit();
+       }	
+   }
+	
+}
