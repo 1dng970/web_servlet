@@ -17,6 +17,7 @@
     <link rel="icon" href="./img/logo.png" sizes="16x16">
 </head>
 <body>
+<<<<<<< HEAD
 <!--상단로고&메뉴-->
 <%@ include file="./nt_top.jsp"  %>
 <!--상단로고&메뉴-->
@@ -30,5 +31,20 @@
 <%@ include file="./nt_footer.jsp" %>
 </footer>
 <!-- 하단 라인 -->
+=======
+<!-- 상단메뉴  -->
+<%@include file='./nt_top.jsp'%>
+<!-- 상단메뉴  -->
+<!-- 공지등록  -->
+<main class="maincss">
+<%@include file='./nt_view.jsp'%>
+</main>
+<!-- 공지등록  -->
+<!-- 하단내용 -->
+<footer class="main_copyright">
+ <%@include file='nt_footer.jsp'%> 
+</footer>
+<!-- 하단내용 -->
+>>>>>>> branch 'main' of https://github.com/1dng970/web_servlet.git
 </body>
 </html>
