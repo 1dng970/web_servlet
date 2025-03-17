@@ -2,7 +2,7 @@ function noticeok(){
 	
 var nfile= document.getElementById("nfile");	
 var nfile= document.getElementById("nfile");
-	
+/*	
 if(){
 	
 	
@@ -20,4 +20,5 @@ else if(frm.subject.value==""){
 else{
 	frm.submit();
 }
+*/
 }
